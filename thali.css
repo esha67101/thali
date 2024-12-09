@@ -1,0 +1,112 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    color: #333;
+    background-image: url("C:/Users/JHON WICK/Documents/fypback photo.jpg");
+    background-size: cover; /* Ensure the image covers the screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+}
+
+/* Header Styling */
+.header {
+    background-color: #00693E;
+    color: white;
+    padding: 12px ;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.description {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Logo Styling */
+.logo {
+    height: 70px; /* Set a fixed height */
+    width: auto; /* Automatically scale width to maintain aspect ratio */
+    margin-left: 20px; /* Add spacing between title and logo */
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #f4f4f4; /* Off-white background color */
+    padding: 10px 0;
+}
+
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox for horizontal row layout */
+    justify-content: center; /* Centers the items horizontally */
+}
+
+.navbar li {
+    margin: 0 20px; /* Adds space between each list item */
+}
+
+.navbar a {
+    color: #333; /* Dark text color for contrast */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #45A049; /* Dark green on hover */
+    color: white; /* White text on hover */
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px 0 100px 100px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #F09319;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e55a4d;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+

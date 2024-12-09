@@ -1,0 +1,137 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #4CAF50;
+    padding: 10px 0;
+}
+
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox for horizontal row layout */
+    justify-content: center; /* Centers the items horizontally */
+}
+
+.navbar li {
+    margin: 0 20px; /* Adds space between each list item */
+}
+
+.navbar a {
+    color: #333; /* Dark text color for contrast */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #45A049; /* Dark green on hover */
+    color: white; /* White text on hover */
+}
+
+/* Main Content Styling */
+.container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Food List Grid Layout */
+.food-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.food-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px; /* Adjust the width of each item */
+    transition: transform 0.3s ease-in-out;
+    display: flex; /* Using flexbox inside the food item */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center the content */
+}
+
+.food-item:hover {
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.food-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.food-item h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.food-item p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+.request-btn,
+.view-details-btn {
+    width: 100%; /* Make both buttons take the full width of the container */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 0; /* Equal padding for top and bottom */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Adds space between the buttons */
+}
+
+.request-btn:hover,
+.view-details-btn:hover {
+    background-color: #45A049; /* Darker green on hover */
+}
+
+.view-details-btn {
+    background-color: #4CAF50; /* Blue color for View Details */
+}
+
+.view-details-btn:hover {
+    background-color: #45A049; /* Darker blue on hover */
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}

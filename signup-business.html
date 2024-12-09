@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up as Food Business - Thali</title>
+    <link rel="stylesheet" href="signup-business.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up as Food Business</h1>
+        <p>Join Thali and help reduce food waste by listing surplus food!</p>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="businessName">Business Name:</label>
+                <input type="text" id="businessName" name="businessName" placeholder="Enter your business name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter your location" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        // Reference the form
+        const signupForm = document.getElementById("signupForm");
+        const messageDiv = document.getElementById("message");
+
+        signupForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Fetch form values
+            const businessName = document.getElementById("businessName").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const location = document.getElementById("location").value;
+
+            // Validate passwords
+            if (password !== confirmPassword) {
+                messageDiv.textContent = "Passwords do not match!";
+                messageDiv.style.color = "red";
+                return;
+            }
+
+            try {
+                // Firebase Authentication: Create User
+                const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+                const user = userCredential.user;
+
+                // Firestore: Save additional data
+                await firebase.firestore().collection("users").doc(user.uid).set({
+                    businessName,
+                    email,
+                    phone,
+                    location,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                });
+
+                messageDiv.textContent = "Signup successful! You can now log in.";
+                messageDiv.style.color = "green";
+
+                // Clear form
+                signupForm.reset();
+            } catch (error) {
+                messageDiv.textContent = 'Error: ${error.message}';
+                messageDiv.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
